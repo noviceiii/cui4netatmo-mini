@@ -1,0 +1,75 @@
+<html>
+ 
+<head>
+    <title>Test Netatmo API Credentials</title>
+</head>
+ 
+<body>
+ 
+    <h2>Test your Netatrmo credentials</h2>
+    Step 1: Aquire Access Token from Netatmo developer page.<br>
+    Step 2: Use Access Token by copying it from step 1. Something like nnnnnnnnnnnn|nnnnnnnnnnnn <br>
+    <br>
+ 
+    <h3>Step 1</h3>
+    <!-- FORM STEP 1 -->
+    <table>
+        <form method="POST" action="https://api.netatmo.com/oauth2/token" enctype="application/x-www-form-urlencoded;charset=UTF-8">
+            <tr>
+                <td>grant_type: </td>
+                <td><input type="text" name="grant_type" value="password"></td>
+            </tr>
+            <tr>
+                <td>client_id: </td>
+                <td><input type="text" name="client_id" value="nnnnnnnnnnnnnnnnnnnnn"> </td>
+            </tr>
+            <tr>
+                <td>client_secret: </td>
+                <td><input type="text" name="client_secret" value="nnnnnnnnnnnnnnnnnnnnn"> </td>
+            </tr>
+            <tr>
+                <td>username: </td>
+                <td><input type="text" name="username" value="name@mail.com"></td>
+            </tr>
+            <tr>
+                    <td>password: </td>
+                    <td><input type="text" name="password" value="PASSWORD"></td>
+            </tr>
+            <tr>
+                <td>scope (optional): </td>
+                <td><input type="text" name="scope" value="read_station read_thermostat"> </td>
+            </tr>
+ 
+            <td>See JSON</td>
+            <td><input type="submit"></td>
+        </form>
+    </table>
+
+
+
+    <h3>Step 2</h3>
+    <!-- FORM STEP 2 -->
+    <table>
+        <form method="POST" action="https://api.netatmo.com/api/getstationsdata" enctype="application/x-www-form-urlencoded;charset=UTF-8">
+            <tr>
+                <td>access_token: </td>
+                <td><input type="text" name="access_token" value="nnnnnnnnnnnnnn|nnnnnnnnnnnnnn"></td>
+            </tr>
+            <tr>
+                <td>device_id (optional, uncomment value, if not used): </td>
+                <td><input type="text" name="device_id" value="nn:nn:nn:nn:nn"></td> 
+            </tr>
+            <tr>
+                <td>scope (optional): </td>
+                <td><input type="text" name="scope" value="read_station read_thermostat"> </td>
+            </tr>
+ 
+            <td>See JSON</td>
+            <td><input type="submit"></td>
+        </form>
+    </table>
+ 
+</body>
+ 
+
+</html>
